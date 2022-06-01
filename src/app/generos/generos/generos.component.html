@@ -1,0 +1,16 @@
+ <!-- card -->
+ <h2 class="text-3xl capitalize">Generos Musicales</h2>
+ <div style="width: 80%; text-align: center; margin: auto">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+     <div class="p-1" class="col" *ngFor="let items of genres;">
+       <span class="bg-gray-600 bg-opacity-40 flex items-center rounded-md">
+         <img class="rounded-l-md" src="{{ items.picture}}" />
+         <span class="capitalize px-9 font-bold text-white">{{items.name}}</span>
+       </span>
+     </div>
+   </div>
+
+
+   <div class="barra">
+       <br>
+   </div>

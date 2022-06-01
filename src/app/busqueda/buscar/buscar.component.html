@@ -1,0 +1,71 @@
+<div style=" height: 80vh" class="parent">
+    <div class="child ">
+      <div class="d-flex justify-content-center">
+        <div class="input-group" id="input-buscar">
+          <input type="text" #buscar class="form-control" placeholder="Busca tu artista favorito..." />
+          <button class="btn btn-outline-secondary btn-dark text-white" (click)="getMusic(buscar)" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="text-center" style="width: 14rem; margin: left;  margin-bottom: 50px; padding-top: 50px;" *ngIf="infoArtist">
+                  <a class="navbar-brand" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Artista Verificado
+                  </a>
+          <img src="{{busqueda[0].artist.picture_big}}" class="rounded-circle" alt="...">
+          
+            <h2 class="NombreArtista">{{busqueda[0].artist.name}}</h2>
+
+        </div>
+        <div id="recenty played" class="text-left p-8">
+            <h2 class="text-3xl capitalize my-6">Albunes del Artista</h2>
+        </div>
+        <div style="width: 80%; text-align: center; margin: auto">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+              <div class="col" *ngFor="let items of album">
+                
+                  <div class="card h-100 taralbum" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getTrack(items.id)">
+                    <img src="{{ items.cover_big }}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h6 class="card-title tituloalbum">{{ items.title }}</h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+    
+          <!-- modal -->
+          <div class="modal fade  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog bg-dark ">
+              <div class="modal-content bg-dark justify-content-center">
+                <div class="modal-header ">
+                  <h5 class="modal-title text-center" id="exampleModalLabel">Canciones del album</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-backdrop-bg " *ngFor="let item of track">
+                  <h1>
+                    <audio controls>
+                      <source src="{{ item.preview }}">
+                    </audio>
+                  </h1>
+                  <div class="card-body modal-backdrop-bg">
+                    <p class="card-text modal-backdrop-bg justify-content-cente">{{ item.title }}</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="barra">
+        <br>
+    </div>

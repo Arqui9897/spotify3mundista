@@ -1,0 +1,35 @@
+.taralbum{
+    background-color: #181818;
+}
+
+.tituloalbum{
+color: #FFFFFF;
+}
+
+.taralbum:hover{
+    background-color: #282828;
+}
+
+.NombreArtista{
+    font-size: 4rem;
+}
+
+.modal-backdrop {
+    display: none;
+  }
+  
+  .modal {
+    background: rgba(0,0,0,0.5);
+  }
+
+  .barra{
+      padding-top: 200px;
+      margin-top: 200px;
+  }
+
+
+.aaaaa{
+    justify-content: center;
+    text-align: center;
+
+}
